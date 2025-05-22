@@ -1,0 +1,22 @@
+<h1>jBird</h1>
+
+<h2>Top Species</h2>
+<p>from the past day</p>
+<ul class="species-list">
+  <% @species_past_day.sort_by { |_, c| -c }.each do |species, count| %>
+    <% info = HomeController::BIRDS_BY_NAME[species.downcase] %>
+    <% puts info %>
+    <li class="species-card">
+      <img src="<%= info['images'][0] %>" alt="<%= species %>" class="species-img">
+      <div class="species-meta">
+        <span class="species-common"><%= species %></span><br>
+        <em class="species-sci"><%= info['sciName'] %></em>
+      </div>
+      <span class="species-count"><%= count %></span>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Top 3 Species</h2>
+<p>from the past day</p>
+<%= column_chart @species_past_day_top %>

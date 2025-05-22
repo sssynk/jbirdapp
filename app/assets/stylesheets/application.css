@@ -1,0 +1,56 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* constrain the overall strip */
+.species-list {
+    list-style: none;
+    margin: 0 auto; /* center the whole block */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* allow multiple rows */
+    gap: 16px; /* space between cards */
+    max-width: 1100px; /* whatever looks good */
+}
+
+/* individual card */
+.species-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 320px; /* fixed / tweak as needed   */
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+}
+.species-img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.species-meta {
+    flex: 1;
+}
+.species-common {
+    font-weight: 600;
+}
+.species-sci {
+    color: #666;
+}
+.species-count {
+    font-weight: 700;
+}
